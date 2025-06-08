@@ -1,0 +1,46 @@
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+/build
+/dist
+
+# Environment variables
+.env
+.env.*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# React-specific
+.cache/
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Express-specific
+/uploads/
+tmp/
+
+# Ignore this specific folder
+dark-glass-folio/
+
+# Optional: Mac's weird files
+._*

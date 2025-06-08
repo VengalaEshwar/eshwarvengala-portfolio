@@ -1,0 +1,209 @@
+@import 'tailwindcss';
+@import '@coreui';
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-portfolio-black: #0f0f0f;
+  --color-portfolio-dark: #1b1b1b;
+  --color-portfolio-gray: #2a2a2a;
+  --color-portfolio-light-gray: #3a3a3a;
+  --color-portfolio-text: #ffffff;
+  --color-portfolio-text-muted: #a1a1a1;
+  --color-portfolio-accent: #6366f1;
+  --color-portfolio-accent-hover: #5855eb;
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility glass-container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+@utility nav-item {
+  @apply relative px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer;
+
+  &.active {
+    @apply bg-portfolio-accent text-white;
+  }
+
+  &:not(.active):hover {
+    @apply bg-portfolio-gray;
+  }
+}
+
+@utility active {
+  &.nav-item {
+    @apply bg-portfolio-accent text-white;
+  }
+}
+
+@utility skill-bar {
+  @apply h-2 bg-portfolio-gray rounded-full overflow-hidden;
+}
+
+@utility skill-progress {
+  @apply h-full bg-linear-to-r from-portfolio-accent to-purple-500 rounded-full transition-all duration-1000;
+}
+
+@utility project-card {
+  @apply glass-container rounded-xl  transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+}
+
+@utility achievement-badge {
+  @apply glass-container rounded-xl p-4 transition-all duration-300;
+}
+
+/* Dark Theme Design System */
+@layer base {
+  :root {
+    /* Portfolio Dark Theme */
+    --portfolio-black: #0f0f0f;
+    --portfolio-dark: #1b1b1b;
+    --portfolio-gray: #2a2a2a;
+    --portfolio-light-gray: #3a3a3a;
+    --portfolio-text: #ffffff;
+    --portfolio-text-muted: #a1a1a1;
+    --portfolio-accent: #6366f1;
+    --portfolio-accent-hover: #5855eb;
+    
+    /* Glass effect variables */
+    --glass-bg: rgba(42, 42, 42, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    /* Original design system */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-portfolio-black text-portfolio-text font-sans antialiased;
+    background: linear-gradient(135deg, var(--portfolio-black) 0%, var(--portfolio-dark) 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.6); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
