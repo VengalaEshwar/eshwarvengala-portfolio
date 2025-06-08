@@ -44,7 +44,7 @@ const MainLayout = () => {
 
   const handleResumeClick = async () => {
   // Trigger resume download first
-  setActiveTab('about');
+  setActiveTab('resum');
   const link = document.createElement("a");
   link.href = "/eshwar_vengala_resume.pdf";
   link.target="_blank";

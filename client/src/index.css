@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '@coreui';
+/* @import '@coreui'; */
 @plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is(.dark *));
