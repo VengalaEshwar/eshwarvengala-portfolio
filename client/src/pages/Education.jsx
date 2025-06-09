@@ -207,7 +207,7 @@ const Education = () => {
         <div className="space-y-6">
           {[
             {
-              title: 'Full-Stack Developer Intern, Akiyam Solutions, Gujarat',
+              title: 'Full-Stack Developer Intern, Akiyam Solutions',
               period: '2025-present',
               description: 'Currently interning as a Full Stack Developer at Akhiyam Solutions, contributing to end-to-end web application development.'
             },

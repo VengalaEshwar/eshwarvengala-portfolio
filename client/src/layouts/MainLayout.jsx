@@ -90,6 +90,7 @@ const MainLayout = () => {
           <div className="w-60 max-h-60 rounded-full bg-portfolio-accent p-1">
             <div className="w-full h-full rounded-full bg-portfolio-dark flex items-center justify-center overflow-hidden">
               <img src="https://res.cloudinary.com/dddkksq5w/image/upload/v1749393246/profile_bwjsm9.jpg" alt="Profile" />
+              {/* <img src="/newLogo.jpg" alt="Profile" /> */}
             </div>
           </div>
         </div>

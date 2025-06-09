@@ -17,7 +17,7 @@ const Blogs = () => {
   const blogs = [
    {
     title : 'The aplha-beta',
-    excerpt : "Some random variables which  seems to be not close but they are not........!",
+    excerpt : "Some random variables which seem not close… but they’re not......!",
     category : 'Fun',
     date : "Jun 08, 2025",
     icon : Smile,
