@@ -41,15 +41,25 @@ const MainLayout = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [hasAnimated, setHasAnimated] = useState(false);
   const isMobile = useIsMobile();
-
+const [hasDownloaded,setHasDownloaded]=useState(false);
   const handleResumeClick = async () => {
-  // Trigger resume download first
-  setActiveTab('resum');
   const link = document.createElement("a");
   link.href = "/eshwar_vengala_resume.pdf";
-  link.target="_blank";
-  // link.download = "eshwar_vengala_resume.pdf";
-  link.click();
+  link.target = "_blank";
+
+  if (!hasDownloaded) {
+    link.download = "eshwar_vengala_resume.pdf";
+    link.click();
+
+    setHasDownloaded(true);
+    setTimeout(() => {
+      link.removeAttribute("download");
+      link.click();
+    }, 100);
+  } else {
+    link.click();
+  }
+setActiveTab('about'); 
 
   // Now update Firestore (don’t await before download)
   try {

@@ -53,11 +53,10 @@ const Education = () => {
   ];
 
   const certifications = [
-    { title: 'C Programming', issuer: 'Cisco', year: '2023' },
-    { title: 'Python Programming', issuer: 'Cisco', year: '2023' },
-    { title: 'MERN Stack Development', issuer: 'PW Skills', year: '2024' },
+    { title: 'C Programming', issuer: 'Cisco', year: '2023' ,link : 'https://drive.google.com/file/d/1iQBCPur7W0sFre7ToM-ovfS7JNyWesIR/view?usp=drive_link'},
+    { title: 'Python Programming', issuer: 'Cisco', year: '2023' ,link : 'https://drive.google.com/file/d/1iP_jMosbuUodmcSW7wShdWFl-q8RjELN/view?usp=drive_link'},
+    { title: 'MERN Stack Development', issuer: 'PW Skills', year: '2024' ,link :'https://drive.google.com/file/d/1_2PftSY2ur175fP-BcEiD4W-iePDU3cj/view?usp=sharing'},
   ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -251,12 +250,13 @@ const Education = () => {
         
         <div className="grid md:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
+            <a href={cert.link} target="_blank">
             <motion.div 
               key={index}
               variants={itemVariants}
               className="glass-container rounded-xl p-6 hover:scale-105 transition-all duration-300"
               whileHover={{ y: -5 }}
-            >
+              >
               <div className="w-12 h-12 bg-gradient-to-br from-portfolio-accent to-purple-500 rounded-lg flex items-center justify-center mb-4">
                 <Award size={24} className="text-white" />
               </div>
@@ -264,6 +264,7 @@ const Education = () => {
               <p className="text-portfolio-text-muted text-sm mb-1">{cert.issuer}</p>
               <p className="text-portfolio-accent text-sm">{cert.year}</p>
             </motion.div>
+          </a>
           ))}
         </div>
       </motion.div>

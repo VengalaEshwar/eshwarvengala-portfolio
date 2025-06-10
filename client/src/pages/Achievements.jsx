@@ -48,9 +48,9 @@ const Achievements = () => {
   ];
 
   const certifications = [
-    { name: 'C Programming', issuer: 'Cisco', color: 'bg-blue-500' },
-    { name: 'Python Programming', issuer: 'Cisco', color: 'bg-green-500' },
-    { name: 'MERN Stack', issuer: 'PW Skills', color: 'bg-purple-500' },
+    { name: 'C Programming', issuer: 'Cisco', color: 'bg-blue-500' ,link : 'https://drive.google.com/file/d/1iQBCPur7W0sFre7ToM-ovfS7JNyWesIR/view?usp=drive_link'},
+    { name: 'Python Programming', issuer: 'Cisco', color: 'bg-green-500' ,link : 'https://drive.google.com/file/d/1iP_jMosbuUodmcSW7wShdWFl-q8RjELN/view?usp=drive_link'},
+    { name: 'MERN Stack', issuer: 'PW Skills', color: 'bg-purple-500' ,link : 'https://drive.google.com/file/d/1_2PftSY2ur175fP-BcEiD4W-iePDU3cj/view?usp=sharing'},
   ];
 
   const containerVariants = {
@@ -146,21 +146,22 @@ const Achievements = () => {
           <Award className="mr-3 text-portfolio-accent" />
           Professional Certifications
         </h3>
-        
-        <div className="grid md:grid-cols-3 gap-4">
-          {certifications.map((cert, index) => (
-            <motion.div 
+          <div className="grid md:grid-cols-3 gap-4">
+            {certifications.map((cert, index) => (
+              <motion.div 
               key={index}
               variants={itemVariants}
               className="glass-container rounded-lg p-4 hover:scale-105 transition-all duration-300"
               whileHover={{ y: -5 }}
-            >
-              <div className={`w-8 h-8 ${cert.color} rounded-full mb-3`}></div>
-              <h4 className="font-semibold text-sm mb-1">{cert.name}</h4>
-              <p className="text-portfolio-text-muted text-xs">{cert.issuer}</p>
-            </motion.div>
-          ))}
-        </div>
+              >
+        <a href={cert.link} target="_blank">
+                <div className={`w-8 h-8 ${cert.color} rounded-full mb-3`}></div>
+                <h4 className="font-semibold text-sm mb-1">{cert.name}</h4>
+                <p className="text-portfolio-text-muted text-xs">{cert.issuer}</p>
+            </a>
+              </motion.div>
+            ))}
+          </div>
       </motion.div>
 
       {/* Stats Overview */}
