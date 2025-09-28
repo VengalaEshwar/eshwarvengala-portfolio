@@ -20,7 +20,7 @@ const Projects = () => {
       technologies: ['ExpressJS', 'NodeJS', 'Gemini AI', 'Unix/Linux'],
       year: '2024',
       github: 'https://github.com/VengalaEshwar/project-finbuddy',
-      demo: 'https://github.com/VengalaEshwar/project-finbuddy',
+      demo: 'https://finverse.infinityfreeapp.com/',
       image : "https://res.cloudinary.com/dddkksq5w/image/upload/v1749374978/Screenshot_2025-06-08_145832_lcubnu.png"
     },
     {
